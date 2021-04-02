@@ -1,0 +1,61 @@
+start
+@@this is a comment
+@@ ANOTHER COMMENT WITH SPACE IN THE BEGINNING.
+for( index = 0; index < 300; index = index + 1)
+{
+	if( (senseDist(F1) >= 10.5) | (senseDist(F2) >= 7.3) | (senseDist(F3) >= 7.3) | (senseDist(F4) >= 10.5))  
+	{
+		move(forward);	
+	} endif
+	if( (index % 2 == 0) | (index == 0) ) @@SIREN EFFECT
+	{
+		switchLight("on");
+	} endif
+	else
+	{
+		switchLight("off");
+	} endelse
+} endfor
+
+grab(); @@ grab the object.
+
+whileCounter = 90;
+while( whileCounter > 0)
+{
+	turn(left);
+	whileCounter = whileCounter - 1;
+} endwhile
+
+for( index = 0; index < 1000; index = index + 1)
+{
+	if( (senseDist(B1) >= 10.5) | (senseDist(B2) >= 7.3) | (senseDist(B3) >= 7.3) | (senseDist(B4) >= 10.5))  
+	{
+		move(backward);	
+	} endif	
+} endfor
+whileCounter = 1;
+boolcheck = false;
+while( whileCounter <= 180)
+{
+	turn(right);
+	whileCounter = whileCounter + 1;
+	if( boolcheck == false)
+	{
+		switchLight("on");
+		boolcheck = true;	
+	} endif
+	else
+	{
+		switchLight("off");
+		boolcheck = false;	
+	} endelse
+} endwhile
+release();@@release the object.
+whileCounter = whileCounter * 2;
+whileCounter = whileCounter / 4;
+whileCounter = whileCounter - whileCounter;
+
+
+
+end
+

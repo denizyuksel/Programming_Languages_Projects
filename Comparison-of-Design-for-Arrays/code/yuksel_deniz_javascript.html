@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>PL HW1 Javascript fun. PRESS F12 TO SEE THE CONSOLE.</p>
+	<script>
+		//array initialization...
+		var myJSArray = ["word", "WELCOME", "zero", 4, 55];
+		var intArray = [ 1, 3, 4, 19, 20, -2, -36];
+		alert( myJSArray[1]);		// Greets the grader.
+		var initArr = [];
+		initArr.push(0);
+		initArr.push(1);
+		initArr.push(2);
+		initArr.push(4);
+		initArr.push(10);
+		initArr.push(20);
+		
+		//range checking
+		console.log(initArr[-50]);	// prints undefined to the console.				
+		console.log(initArr[-100]);	// prints undefined to the console.	
+
+		
+		console.log(myJSArray[0]);	// prints word to console.
+		console.log(initArr[2]);	// prints 2 to console. 
+		console.log(initArr[5.5]);	// prints undefined to console. 
+		console.table(myJSArray.slice(2));	//prints to the console the elements after 1st index.
+		console.table(myJSArray.slice(1, 3));	
+		//prints to the console the elements between index 1 and 3. 1 included.
+		myJaggedArray = [[0, 5, 10, 20], [1, 22, 5], [2, 3], [5]];	// This is the jagged array.
+		console.log(myJaggedArray[2][0]); 	// prints 2 to the console.
+		console.log(myJaggedArray[0][3]); 	// prints 20 to the console. 
+		
+	</script>
+	</body>
+</html>

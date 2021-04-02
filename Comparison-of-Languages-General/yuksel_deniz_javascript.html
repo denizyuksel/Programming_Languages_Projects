@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title> CS 315 JAVASCRIPT LOOP FUN </title>
+
+</head>
+
+<body>
+
+<p>PL HW2 Javascript LOOP CHECK. PRESS F12 TO SEE THE CONSOLE.</p>
+
+<script>
+
+var myJSArray = ["word", "WELCOME", "zero", 4, 55];
+var intArray = [ 5, 3, 4, 19, 20, -2, -36];
+
+for( let i = 0; i <10; i++){
+	console.log( "Current value is " + i);
+}
+
+//console.log(i); Generates an error because i is not defined. Therefore the scope of the loop control variable is its block. Its value is not retained like it occurs in Python or PHP.
+for( let i = 1.4; i < 19.8; i++){
+	console.log( "Current value is " + i);
+}
+//Loop control variable and counter variables accepts double values. In the console, the values are printed without their values getting truncated. 
+
+let control = myJSArray.length;
+console.log(control);
+for( let i = 0; i < control; i++){
+	i = i + 5;
+	console.log( "Current value is " + i);
+	control = control + 3;
+}
+
+// The value of the control and counter variable can be modified, and thus affects the number of iterations accordingly. This implies that loop control and counter variables are checked for every evaluation.
+let control2 = 50;
+for( let i = intArray; i < control2; i++){
+	i = 2;
+	console.log( "Current value is " + i);
+	i = 5;
+}
+//In Javascript the variables don't have a type specified when declared. Therefore when an array is initialized to a loop control variable, the value is not defined and the executions written inside the loop does not occur.
+
+for( let i = "Deniz"; i < "Javascript"; i++){
+	console.log( "Current value is " + i);
+}
+//When both the loop control and counter variables are Strings, the loop only evaluates the initial counter variable once, and then exits.
+
+for( let i = "Deniz"; i < intArray; i++){
+	console.log( "Current value is " + i);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+   <body>
+      <?php
+       
+         $arr = array(1,2,"Arif",3,"Deniz",5);
+         $length = count($arr);
+         
+         for( $i = 0; $i < $length; $i++ ) {
+            echo $arr[$i] . " is at location " . $i . "\n";
+         }
+        echo $i;
+        /* If attempted to be printed, i's value is retained and it can be printed. Although the counter varible was initialized and used in the loop, its value is not deallocated but is still retained. After the loop, the counter variable can be used.*/
+        echo "\n\n";
+         
+
+        for( $i = 0; $i < $length; $i++){
+            /* Attempting to change counter and loop control variable respectively below.*/
+            /* INFINITE LOOP IF THIS HAPPENS--><!--$i = 3;*/
+            /* $length = "Random string"; */ /* If this initialization occurs, the print statement occurs only for the first element.*/
+            $length = 10; /* PHP Notice, but no errors.*/
+            /* AGAIN, AN INFINITE LOOP, BUT IS ALLOWED. GIVES PHP Notice:  Undefined offset */ /*$length = array(2,3,4);*/
+            echo $arr[$i] . " is at location " . $i . "\n";
+            
+            /* In PHP, loop control variable and loop parameters can be changed in the loop, and it affects the loop control. If the counter variable is changed in the loop, the number of iterations alter accordingly. Also, the loop control variable can be changed to other values. */
+        }
+        
+        /* In PHP, loop control variable and loop counter can be arrays. */
+        $myStr = "hatice";
+        $count = count($myStr);
+        echo $myStr[2] . " is the 3rd letter of this word: " . $myStr . "\n";
+        echo "Count of \$myStr is " . $count . " known that it is a string. " . "\n";
+        echo "The word will therefore be printed " . $count . " times in the next loop: " . "\n";
+        for($x = 0; $x < $count; $x++){
+            echo $myStr;
+        }
+        
+        /* Control variable and counter variable can be float values in PHP: */
+        /* The below code prints "2 is at location 1.2
+a is at location 2.2
+3 is at location 3.2
+4 is at location 4.2
+5 is at location 5.2" */
+        
+        $doubleVal = 5.6;
+        for( $i = 1.2; $i < $doubleVal; $i++ ) {
+            echo $arr[$i] . " is at location " . $i . "\n";
+         }
+         
+         
+         
+         /* The below code prints all the fruit names.*/
+         $fruits = array("apple", "pear", "orange", "grapefruit", "watermelon", "plum"); 
+
+        foreach ($fruits as $value) {
+            echo "the corresponding fruit is $value " . "\n";
+            echo $fruits[4] . "\n";
+            $value = 2; /* Although there is an assignment to value here, it neither changes anything, nor generates warnings.*/
+            $fruits[4] = "BANANA!!!!"; /* Fourth fruit is not watermelon anymore, it's BANANA! */
+        }
+        
+                  
+    ?> 
+   </body>
+</html>
